@@ -1,0 +1,93 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to bottom, #723939, #be3333, #3f2c2c);
+}
+
+.card {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 850px;
+    height: 500x;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    margin-right: -12px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.container {
+    background-image: linear-gradient(to top, rgba(109, 108, 108, 0.82), rgb(123, 121, 121), rgba(89, 89, 89, 0.272));
+    border-radius: 20px;
+    padding: 5px;
+    width: 220px;
+    margin-left: 315px;
+}
+
+.balance {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttons button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons .create {
+    background-color: #007bff;
+    color: white;
+    margin-left: 50px;
+}
+
+.buttons .create:hover {
+    background-color: #0056b3;
+}
+
+.buttons .spend {
+    background-color: #dc3545;
+    color: white;
+    margin-right: 50px;
+}
+
+.buttons .spend:hover {
+    background-color: #b52a37;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    margin-left: 15px;
+}

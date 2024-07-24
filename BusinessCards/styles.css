@@ -1,0 +1,655 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: linear-gradient(to bottom, rgb(114, 0, 0), rgba(190, 51, 51, 0.856), rgb(63, 44, 44));
+  overflow: visible; /* Hide overflow to prevent scrolling */
+}
+
+/* Horizontal Container */
+.card-container-horizontal {
+  display: flex;
+  flex-wrap: wrap; /* Wrap cards to the next line */
+  justify-content: center; /* Center align items horizontally */
+  gap: 20px; /* Spacing between cards */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: visible; /* Hide overflow to prevent scrolling */
+}
+
+/* Card Styles */
+.card {
+  width: calc(50% - 20px); /* Two cards per row with 20px gap */
+  margin-bottom: 20px; /* Spacing between rows */
+  border-radius: 15px;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  height: 405px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card .card-body {
+  padding: 10px;
+}
+
+.card img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* h5 Background Colors */
+.h5-recognition {
+  background-color: #007bff; /* Blue */
+}
+
+.h5-milestone {
+  background-color: #ff0000; /* Red */
+}
+
+.h5-happy-birthday {
+  background-color: #30aa00; /* Green */
+ 
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+  position: absolute;
+  top: 69%; /* Center vertically */
+  transform: translateY(-50%);
+  background-color: #757575;
+  color: #fff;
+  border: none;
+  padding: 7px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  font-size: 15px;
+}
+
+.nav-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Layout Styles */
+/* Base layout class for common styles */
+.layout {
+  display: flex;
+}
+
+/* Combined styles for text-right-image-left layout */
+.layout-text-right-image-left,
+.layout-text-left-image-right,
+.layout-text-bottom-image-top {
+  display: flex;
+}
+
+.layout-text-right-image-left {
+  flex-direction: row-reverse; /* Text on right side, image on left side */
+}
+
+.layout-text-left-image-right {
+  flex-direction: row; /* Text on left side, image on right side */
+}
+
+.layout-text-bottom-image-top {
+  flex-direction: column; /* Text on bottom, image on top */
+}
+
+
+@media (max-width: 1280px) {
+  /* Additional CSS for off-screen cards */
+  .off-screen {
+    position: absolute;
+    left: -9999px;
+    visibility: hidden;
+  }
+
+  .layout-text-left-image-right {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .layout-text-right-image-left {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .layout-text-left-image-right img,
+  .layout-text-right-image-left img {
+    width: 100px; /* Reduced image size */
+    height: 100px; /* Reduced image size */
+  }
+
+  .layout-text-left-image-right img { 
+    position: relative;
+    bottom: 60px;
+    right: -15px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left img {
+    position: relative;
+    bottom: 60px;
+    right: 15px;
+  }
+
+  .layout-text-bottom-image-top img {
+    position: relative;
+    bottom: 100px;
+    left: 260px;
+    width: 100px; /* Reduced image size */
+    height: 100px; /* Reduced image size */
+    margin-bottom: 25px;
+  }
+
+  
+  .layout-text-bottom-image-top .speech3.up3 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
+    border-radius: 10px;
+    padding: 12px; /* Reduced padding */
+    position: relative;
+    left: 18px;
+    width: 100%; /* Ensure it does not exceed the parent container's width */
+    text-align: center;
+    text-indent: 5%;
+    font-size: 15px; /* Reduced font size */
+    top: 50px;
+  }
+
+  /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left .speech3.up3 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
+    border-radius: 30px;
+    padding: 12px; /* Reduced padding */
+    position: relative;
+    left: 30%;
+    width: 100%; /* Ensure it does not exceed the parent container's width */
+    text-align: center;
+    text-indent: 5%;
+    font-size: 15px; /* Reduced font size */
+  }
+
+  .layout-text-left-image-right .speech3.up3 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
+    border-radius: 30px;
+    padding: 12px; /* Reduced padding */
+    position: relative;
+    right: -0.5%;
+    width: 100%; /* Ensure it does not exceed the parent container's width */
+    text-align: center;
+    text-indent: 5%;
+    font-size: 15px; /* Reduced font size */
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left h2 {
+    position: relative;
+    left: 150px;
+  }
+
+  .layout-text-bottom-image-top h2{
+    position: relative;
+    top: 45px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left .Action-Card {
+    position: relative;
+    top: 30px;
+    right: 4090px;
+  }
+
+  .layout-text-left-image-right .Items-Json {
+    position: relative;
+    right: -10px;
+  }
+
+  .layout-text-left-image-right .Action-Card {
+    position: relative;
+    top: 30px;
+    right: 240px;
+  }
+
+  .layout-text-bottom-image-top .Action-Card {
+    position: relative;
+    bottom: 30px;
+    left: 25px;
+  }
+
+  .layout-text-bottom-image-top .Items-Json {
+    position: relative;
+    bottom: -30px;
+    left: -70px;
+  }
+
+  .layout-text-bottom-image-top h4,
+  h5 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+    border-radius: 20px;
+  }
+
+  .layout-text-left-image-right h4 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+    border-radius: 20px;
+    padding: 8px; /* Reduced padding */
+    position: relative;
+    right: 185px;
+    top: 35px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left h4 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+    border-radius: 20px;
+    padding: 8px; /* Reduced padding */
+    position: relative;
+    left: -125px;
+    top: 35px;
+  }
+
+  .layout-text-bottom-image-top h4 {
+    position: relative;
+    left: -160px;
+    bottom: 20px;
+    margin-bottom: 10px;
+
+  }
+
+  .layout-text-bottom-image-top h5 { 
+    text-align: center;
+    padding: 6px;
+    position: relative;
+    bottom: 10px;
+    left: -40px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left h5 {
+    text-align: center;
+    padding: 6px;
+    position: relative;
+    bottom:10px;
+    margin-left: 125px;
+  }
+
+  .layout-text-left-image-right h5 {
+    text-align: center;
+    padding: 6px;
+    position: relative;
+    bottom: 10px;
+    left: -39px;
+  }
+
+  .layout-text-bottom-image-top h4 {
+    text-align: center;
+    padding: 10px; /* Reduced padding */
+    position: relative;
+    left: -180px;
+    top: 80px;
+  }
+
+  h5 {
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    min-width: 80%;
+    padding: 5px;
+    text-align: center;
+  }
+
+  /* Paragraph Styles */
+  .layout-text-left-image-right p,
+  .layout-text-right-image-left p {
+    padding: 5px;
+    margin-top: -3px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left p {
+    position: relative;
+  }
+
+  /* Speech Bubbles */
+  .layout-text-bottom-image-top .speech.up {
+    position: relative;
+    left: 500px;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 60px;
+    margin-bottom: -20px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left .speech.up {
+    position: relative;
+    top: 13px;
+    margin-right: -150px;
+    text-align: center;
+  }
+
+  .layout-text-left-image-right .speech.up {
+    position: relative;
+    top: 13px;
+    left: -40px;
+    text-align: center;
+  }
+
+
+  .speech {
+    font-size: 12px; /* Reduced font size */
+    color: #fff;
+    background: #464242;
+    padding: 10px; /* Reduced padding */
+    border-radius: 20px 20px 20px 20px;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .speech::after {
+    display: block;
+    width: 0;
+    content: "";
+    border: 12px solid transparent; /* Adjusted border size */
+    position: absolute;
+  }
+
+  .speech.up::after {
+    top: -12px;
+    left: calc(50% - 12px);
+  }
+
+  .speech.up::after {
+    border-bottom-color: #000000;
+    border-top: 0;
+  }
+}
+
+/* Break between the sections */
+
+
+@media (min-width: 1920px) {
+  /* Additional CSS for larger screen size */
+  
+  .off-screen {
+    position: absolute;
+    left: -9999px;
+    visibility: hidden;
+  }
+
+  .layout-text-left-image-right {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .layout-text-right-image-left {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .layout-text-left-image-right img,
+  .layout-text-right-image-left img {
+    width: 100px; /* Reduced image size */
+    height: 100px; /* Reduced image size */
+  }
+
+  .layout-text-left-image-right img { 
+    position: relative;
+    bottom: 60px;
+    right: -15px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left img {
+    position: relative;
+    bottom: 60px;
+    right: 15px;
+  }
+
+  .layout-text-bottom-image-top img {
+    position: relative;
+    bottom: 100px;
+    left: 45%;
+    width: 100px; /* Reduced image size */
+    height: 100px; /* Reduced image size */
+    margin-bottom: 25px;
+  }
+
+  
+  .layout-text-bottom-image-top .speech3.up3 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
+    border-radius: 10px;
+    padding: 12px; /* Reduced padding */
+    position: relative;
+    left: -133px;
+    width: 100px; /* Ensure it does not exceed the parent container's width */
+    text-align: center;
+    text-indent: 5%;
+    font-size: 15px; /* Reduced font size */
+    top: 120px;
+  }
+
+  /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left .speech3.up3 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
+    border-radius: 30px;
+    padding: 12px; /* Reduced padding */
+    position: relative;
+    left: 30%;
+    width: 100%; /* Ensure it does not exceed the parent container's width */
+    text-align: center;
+    text-indent: 5%;
+    font-size: 15px; /* Reduced font size */
+  }
+
+  .layout-text-left-image-right .speech3.up3 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
+    border-radius: 30px;
+    padding: 12px; /* Reduced padding */
+    position: relative;
+    right: -0.5%;
+    width: 100%; /* Ensure it does not exceed the parent container's width */
+    text-align: center;
+    text-indent: 5%;
+    font-size: 15px; /* Reduced font size */
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left h2 {
+    position: relative;
+    left: 150px;
+  }
+
+  .layout-text-bottom-image-top h2{
+    position: relative;
+    top: 45px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left .Action-Card {
+    position: relative;
+    top: 30px;
+    right: 4090px;
+  }
+
+  .layout-text-left-image-right .Items-Json {
+    position: relative;
+    right: -10px;
+  }
+
+  .layout-text-left-image-right .Action-Card {
+    position: relative;
+    top: 30px;
+    right: 240px;
+  }
+
+  .layout-text-bottom-image-top .Action-Card {
+    position: relative;
+    top: 20px;
+    left: 205px;
+  }
+
+  .layout-text-bottom-image-top .Items-Json {
+    position: relative;
+    bottom: -20px;
+    left: 160px;
+  }
+
+  .layout-text-bottom-image-top h4,
+  h5 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+    border-radius: 20px;
+  }
+
+  .layout-text-left-image-right h4 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+    border-radius: 20px;
+    padding: 8px; /* Reduced padding */
+    position: relative;
+    right: 185px;
+    top: 35px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left h4 {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+    border-radius: 20px;
+    padding: 8px; /* Reduced padding */
+    position: relative;
+    left: -125px;
+    top: 35px;
+  }
+
+  .layout-text-bottom-image-top h4 {
+    position: relative;
+    left: -160px;
+    bottom: 20px;
+    margin-bottom: 10px;
+
+  }
+
+  .layout-text-bottom-image-top h5 { 
+    text-align: center;
+    padding: 6px;
+    position: relative;
+    top: 60px;
+    left: -40px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left h5 {
+    text-align: center;
+    padding: 6px;
+    position: relative;
+    bottom:10px;
+    margin-left: 125px;
+  }
+
+  .layout-text-left-image-right h5 {
+    text-align: center;
+    padding: 6px;
+    position: relative;
+    bottom: 10px;
+    left: -39px;
+  }
+
+  .layout-text-bottom-image-top h4 {
+    text-align: center;
+    padding: 10px; /* Reduced padding */
+    position: relative;
+    left: -330px;
+    top: 150px;
+  }
+
+  h5 {
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    min-width: 80%;
+    padding: 5px;
+    text-align: center;
+  }
+
+  /* Paragraph Styles */
+  .layout-text-left-image-right p,
+  .layout-text-right-image-left p {
+    padding: 5px;
+    margin-top: -3px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left p {
+    position: relative;
+  }
+
+  /* Speech Bubbles */
+  .layout-text-bottom-image-top .speech.up {
+    position: relative;
+    left: 500px;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 130px;
+    margin-bottom: -90px;
+  }
+
+   /*Image is acutally on the right, image has been inversed due to digital persepective*/
+  .layout-text-right-image-left .speech.up {
+    position: relative;
+    top: 13px;
+    margin-right: -150px;
+    text-align: center;
+  }
+
+  .layout-text-left-image-right .speech.up {
+    position: relative;
+    top: 13px;
+    left: -40px;
+    text-align: center;
+  }
+
+
+  .speech {
+    font-size: 12px; /* Reduced font size */
+    color: #fff;
+    background: #464242;
+    padding: 10px; /* Reduced padding */
+    border-radius: 20px 20px 20px 20px;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .speech::after {
+    display: block;
+    width: 0;
+    content: "";
+    border: 12px solid transparent; /* Adjusted border size */
+    position: absolute;
+  }
+
+  .speech.up::after {
+    top: -12px;
+    left: calc(50% - 12px);
+  }
+
+  .speech.up::after {
+    border-bottom-color: #000000;
+    border-top: 0;
+  }
+}
