@@ -7,24 +7,23 @@ body {
   min-height: 100vh;
   margin: 0;
   background-image: linear-gradient(to bottom, rgb(114, 0, 0), rgba(190, 51, 51, 0.856), rgb(63, 44, 44));
-  overflow: visible; /* Hide overflow to prevent scrolling */
+  overflow: visible; /* Prevent scrolling */
 }
 
 /* Horizontal Container */
 .card-container-horizontal {
   display: flex;
-  flex-wrap: wrap; /* Wrap cards to the next line */
-  justify-content: center; /* Center align items horizontally */
-  gap: 20px; /* Spacing between cards */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
   box-sizing: border-box;
-  overflow: visible; /* Hide overflow to prevent scrolling */
 }
 
 /* Card Styles */
 .card {
   width: calc(50% - 20px); /* Two cards per row with 20px gap */
-  margin-bottom: 20px; /* Spacing between rows */
+  margin-bottom: 20px;
   border-radius: 15px;
   overflow: hidden;
   background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
@@ -37,14 +36,14 @@ body {
   transform: scale(1.05);
 }
 
-.card .card-body {
-  padding: 10px;
-}
-
 .card img {
   border-radius: 8px;
   max-width: 100%;
   height: auto;
+}
+
+.card .card-body {
+  padding: 10px;
 }
 
 /* h5 Background Colors */
@@ -58,13 +57,86 @@ body {
 
 .h5-happy-birthday {
   background-color: #30aa00; /* Green */
- 
 }
 
-/* Navigation Arrows */
+/* Layout Styles */
+.layout {
+  display: flex;
+}
+
+.layout-text-right-image-left,
+.layout-text-left-image-right,
+.layout-text-bottom-image-top {
+  display: flex;
+}
+
+.layout-text-right-image-left {
+  flex-direction: row-reverse; /* Text on right side, image on left side */
+}
+
+.layout-text-left-image-right {
+  flex-direction: row; /* Text on left side, image on right side */
+}
+
+.layout-text-bottom-image-top {
+  flex-direction: column-reverse; /* Text on bottom, image on top */
+}
+
+/* Base styles for cards */
+.card h2,
+.card h4,
+.card h5 { 
+  padding: 10px;
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+  border-radius: 20px;
+  text-align: center;
+}
+
+.speech3.up3 {
+  margin: 5px;
+  padding: 10px;
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* Common styles for all speech bubbles */
+.speech {
+  margin: 5px;
+  padding: 10px;
+  font-size: 14px;
+  color: #fff;
+  background: #464242;
+  padding: 10px;
+  border-radius: 20px;
+  max-width: 400px;
+  position: relative;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.speech::after {
+  display: block;
+  width: 0;
+  content: "";
+  border: 12px solid transparent;
+  position: absolute;
+}
+
+.speech.up::after {
+  top: -12px;
+  left: calc(50% - 12px);
+  border-bottom-color: #000;
+  border-top: 0;
+}
+
+.off-screen {
+  display: none;
+}
+
 .nav-arrow {
   position: absolute;
-  top: 69%; /* Center vertically */
+  top: 50%; /* Center vertically */
   transform: translateY(-50%);
   background-color: #757575;
   color: #fff;
@@ -88,568 +160,351 @@ body {
   right: 10px;
 }
 
-/* Layout Styles */
-/* Base layout class for common styles */
-.layout {
-  display: flex;
-}
-
-/* Combined styles for text-right-image-left layout */
-.layout-text-right-image-left,
-.layout-text-left-image-right,
 .layout-text-bottom-image-top {
-  display: flex;
-}
-
-.layout-text-right-image-left {
-  flex-direction: row-reverse; /* Text on right side, image on left side */
+  flex-direction: column-reverse;
 }
 
 .layout-text-left-image-right {
-  flex-direction: row; /* Text on left side, image on right side */
+  flex-direction: row;
+  align-items: center;
 }
 
-.layout-text-bottom-image-top {
-  flex-direction: column; /* Text on bottom, image on top */
+.layout-text-right-image-left {
+  flex-direction: row-reverse;
+  align-items: center;
 }
 
+.layout-text-left-image-right img,
+.layout-text-right-image-left img {
+  width: 100px;
+  height: 100px;
+}
 
+.layout-text-bottom-image-top img {
+  position: relative;
+  bottom: 220px;
+  left: 410px;
+  width: 100px; /* Reduced image size */
+  height: 100px; /* Reduced image size */
+  margin-bottom: 25px;
+}
+
+.layout-text-bottom-image-top .speech.up {
+  position: relative;
+  top: 100px;
+  left: 245px;
+}
+
+.layout-text-bottom-image-top .speech3.up3 {
+  position: relative;
+  top: 90px;
+  left: -125px;
+}
+
+.layout-text-bottom-image-top h5 {
+  position: relative;
+  top: 160px;
+  width: 490px;
+  left: -15%;
+}
+
+.layout-text-bottom-image-top h4 {
+  position: relative;
+  top: 140px;
+  width: 100px;
+  left: -37%;
+}
+
+/* Adjustments for smaller screens */
 @media (max-width: 1280px) {
   /* Additional CSS for off-screen cards */
-  .off-screen {
-    position: absolute;
-    left: -9999px;
-    visibility: hidden;
+
+  .card {
+    height: 355px;
   }
 
-  .layout-text-left-image-right {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .layout-text-right-image-left {
-    flex-direction: row-reverse;
-    align-items: center;
-  }
-
-  .layout-text-left-image-right img,
-  .layout-text-right-image-left img {
-    width: 100px; /* Reduced image size */
-    height: 100px; /* Reduced image size */
-  }
-
-  .layout-text-left-image-right img { 
-    position: relative;
-    bottom: 60px;
-    right: -15px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left img {
-    position: relative;
-    bottom: 60px;
-    right: 15px;
+  .nav-arrow {
+    top: 69%;
   }
 
   .layout-text-bottom-image-top img {
     position: relative;
     bottom: 100px;
     left: 260px;
-    width: 100px; /* Reduced image size */
-    height: 100px; /* Reduced image size */
     margin-bottom: 25px;
   }
 
-  
   .layout-text-bottom-image-top .speech3.up3 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
-    border-radius: 10px;
-    padding: 12px; /* Reduced padding */
-    position: relative;
-    left: 18px;
-    width: 100%; /* Ensure it does not exceed the parent container's width */
-    text-align: center;
-    text-indent: 5%;
-    font-size: 15px; /* Reduced font size */
     top: 50px;
+    left: 18px;
   }
 
-  /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left .speech3.up3 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
-    border-radius: 30px;
-    padding: 12px; /* Reduced padding */
-    position: relative;
-    left: 30%;
-    width: 100%; /* Ensure it does not exceed the parent container's width */
-    text-align: center;
-    text-indent: 5%;
-    font-size: 15px; /* Reduced font size */
-  }
-
-  .layout-text-left-image-right .speech3.up3 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
-    border-radius: 30px;
-    padding: 12px; /* Reduced padding */
-    position: relative;
-    right: -0.5%;
-    width: 100%; /* Ensure it does not exceed the parent container's width */
-    text-align: center;
-    text-indent: 5%;
-    font-size: 15px; /* Reduced font size */
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left h2 {
-    position: relative;
-    left: 150px;
-  }
-
-  .layout-text-bottom-image-top h2{
-    position: relative;
-    top: 45px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left .Action-Card {
-    position: relative;
-    top: 30px;
-    right: 4090px;
-  }
-
-  .layout-text-left-image-right .Items-Json {
-    position: relative;
-    right: -10px;
-  }
-
-  .layout-text-left-image-right .Action-Card {
-    position: relative;
-    top: 30px;
-    right: 240px;
-  }
-
-  .layout-text-bottom-image-top .Action-Card {
-    position: relative;
-    bottom: 30px;
-    left: 25px;
-  }
-
-  .layout-text-bottom-image-top .Items-Json {
-    position: relative;
-    bottom: -30px;
-    left: -70px;
-  }
-
-  .layout-text-bottom-image-top h4,
-  h5 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
-    border-radius: 20px;
-  }
-
-  .layout-text-left-image-right h4 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
-    border-radius: 20px;
-    padding: 8px; /* Reduced padding */
-    position: relative;
-    right: 185px;
-    top: 35px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left h4 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
-    border-radius: 20px;
-    padding: 8px; /* Reduced padding */
-    position: relative;
-    left: -125px;
-    top: 35px;
+  .layout-text-bottom-image-top h5 {
+    bottom: 10px;
+    left: -40px;
   }
 
   .layout-text-bottom-image-top h4 {
-    position: relative;
     left: -160px;
     bottom: 20px;
     margin-bottom: 10px;
-
-  }
-
-  .layout-text-bottom-image-top h5 { 
-    text-align: center;
-    padding: 6px;
-    position: relative;
-    bottom: 10px;
-    left: -40px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left h5 {
-    text-align: center;
-    padding: 6px;
-    position: relative;
-    bottom:10px;
-    margin-left: 125px;
-  }
-
-  .layout-text-left-image-right h5 {
-    text-align: center;
-    padding: 6px;
-    position: relative;
-    bottom: 10px;
-    left: -39px;
-  }
-
-  .layout-text-bottom-image-top h4 {
-    text-align: center;
-    padding: 10px; /* Reduced padding */
-    position: relative;
-    left: -180px;
-    top: 80px;
-  }
-
-  h5 {
-    color: rgb(0, 0, 0);
-    max-width: 100%;
-    min-width: 80%;
-    padding: 5px;
-    text-align: center;
-  }
-
-  /* Paragraph Styles */
-  .layout-text-left-image-right p,
-  .layout-text-right-image-left p {
-    padding: 5px;
-    margin-top: -3px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left p {
-    position: relative;
-  }
-
-  /* Speech Bubbles */
-  .layout-text-bottom-image-top .speech.up {
-    position: relative;
-    left: 500px;
-    width: 200px;
-    text-align: center;
-    padding: 10px;
-    margin-top: 60px;
-    margin-bottom: -20px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left .speech.up {
-    position: relative;
-    top: 13px;
-    margin-right: -150px;
-    text-align: center;
-  }
-
-  .layout-text-left-image-right .speech.up {
-    position: relative;
-    top: 13px;
-    left: -40px;
-    text-align: center;
-  }
-
-
-  .speech {
-    font-size: 12px; /* Reduced font size */
-    color: #fff;
-    background: #464242;
-    padding: 10px; /* Reduced padding */
-    border-radius: 20px 20px 20px 20px;
-    max-width: 400px;
-    position: relative;
-  }
-
-  .speech::after {
-    display: block;
-    width: 0;
-    content: "";
-    border: 12px solid transparent; /* Adjusted border size */
-    position: absolute;
-  }
-
-  .speech.up::after {
-    top: -12px;
-    left: calc(50% - 12px);
-  }
-
-  .speech.up::after {
-    border-bottom-color: #000000;
-    border-top: 0;
-  }
-}
-
-/* Break between the sections */
-
-
-@media (min-width: 1920px) {
-  /* Additional CSS for larger screen size */
-  
-  .off-screen {
-    position: absolute;
-    left: -9999px;
-    visibility: hidden;
-  }
-
-  .layout-text-left-image-right {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .layout-text-right-image-left {
-    flex-direction: row-reverse;
-    align-items: center;
   }
 
   .layout-text-left-image-right img,
   .layout-text-right-image-left img {
-    width: 100px; /* Reduced image size */
-    height: 100px; /* Reduced image size */
-  }
-
-  .layout-text-left-image-right img { 
     position: relative;
     bottom: 60px;
-    right: -15px;
   }
 
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
   .layout-text-right-image-left img {
-    position: relative;
-    bottom: 60px;
     right: 15px;
   }
 
-  .layout-text-bottom-image-top img {
-    position: relative;
-    bottom: 100px;
-    left: 45%;
-    width: 100px; /* Reduced image size */
-    height: 100px; /* Reduced image size */
-    margin-bottom: 25px;
+  .layout-text-left-image-right img {
+    right: -15px;
   }
 
-  
-  .layout-text-bottom-image-top .speech3.up3 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
-    border-radius: 10px;
-    padding: 12px; /* Reduced padding */
-    position: relative;
-    left: -133px;
-    width: 100px; /* Ensure it does not exceed the parent container's width */
-    text-align: center;
-    text-indent: 5%;
-    font-size: 15px; /* Reduced font size */
-    top: 120px;
-  }
-
-  /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left .speech3.up3 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
-    border-radius: 30px;
-    padding: 12px; /* Reduced padding */
-    position: relative;
-    left: 30%;
-    width: 100%; /* Ensure it does not exceed the parent container's width */
-    text-align: center;
-    text-indent: 5%;
-    font-size: 15px; /* Reduced font size */
-  }
-
-  .layout-text-left-image-right .speech3.up3 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(240, 240, 240, 0.9), rgba(220, 220, 220, 0.8), rgba(200, 200, 200, 0.7));
-    border-radius: 30px;
-    padding: 12px; /* Reduced padding */
-    position: relative;
-    right: -0.5%;
-    width: 100%; /* Ensure it does not exceed the parent container's width */
-    text-align: center;
-    text-indent: 5%;
-    font-size: 15px; /* Reduced font size */
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left h2 {
-    position: relative;
-    left: 150px;
-  }
-
-  .layout-text-bottom-image-top h2{
-    position: relative;
-    top: 45px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
-  .layout-text-right-image-left .Action-Card {
-    position: relative;
-    top: 30px;
-    right: 4090px;
-  }
-
-  .layout-text-left-image-right .Items-Json {
-    position: relative;
-    right: -10px;
-  }
-
-  .layout-text-left-image-right .Action-Card {
-    position: relative;
-    top: 30px;
-    right: 240px;
-  }
-
-  .layout-text-bottom-image-top .Action-Card {
-    position: relative;
-    top: 20px;
-    left: 205px;
-  }
-
-  .layout-text-bottom-image-top .Items-Json {
-    position: relative;
-    bottom: -20px;
-    left: 160px;
-  }
-
-  .layout-text-bottom-image-top h4,
-  h5 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
-    border-radius: 20px;
+  .layout-text-bottom-image-top h4 {
+    top: 80px;
+    left: -180px;
   }
 
   .layout-text-left-image-right h4 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
-    border-radius: 20px;
-    padding: 8px; /* Reduced padding */
-    position: relative;
     right: 185px;
     top: 35px;
   }
 
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
   .layout-text-right-image-left h4 {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(220, 220, 220, 0.808), rgba(186, 160, 160, 0.726));
-    border-radius: 20px;
-    padding: 8px; /* Reduced padding */
-    position: relative;
     left: -125px;
     top: 35px;
   }
 
-  .layout-text-bottom-image-top h4 {
-    position: relative;
-    left: -160px;
-    bottom: 20px;
-    margin-bottom: 10px;
-
-  }
-
-  .layout-text-bottom-image-top h5 { 
-    text-align: center;
-    padding: 6px;
-    position: relative;
-    top: 60px;
-    left: -40px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
   .layout-text-right-image-left h5 {
-    text-align: center;
-    padding: 6px;
-    position: relative;
-    bottom:10px;
+    bottom: 10px;
     margin-left: 125px;
   }
 
   .layout-text-left-image-right h5 {
-    text-align: center;
-    padding: 6px;
-    position: relative;
-    bottom: 10px;
     left: -39px;
   }
 
-  .layout-text-bottom-image-top h4 {
-    text-align: center;
-    padding: 10px; /* Reduced padding */
-    position: relative;
-    left: -330px;
-    top: 150px;
-  }
-
-  h5 {
-    color: rgb(0, 0, 0);
-    max-width: 100%;
-    min-width: 80%;
-    padding: 5px;
-    text-align: center;
-  }
-
-  /* Paragraph Styles */
-  .layout-text-left-image-right p,
-  .layout-text-right-image-left p {
-    padding: 5px;
-    margin-top: -3px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
   .layout-text-right-image-left p {
     position: relative;
   }
 
-  /* Speech Bubbles */
-  .layout-text-bottom-image-top .speech.up {
-    position: relative;
-    left: 500px;
-    width: 200px;
-    text-align: center;
-    padding: 10px;
-    margin-top: 130px;
-    margin-bottom: -90px;
-  }
-
-   /*Image is acutally on the right, image has been inversed due to digital persepective*/
   .layout-text-right-image-left .speech.up {
-    position: relative;
     top: 13px;
     margin-right: -150px;
-    text-align: center;
   }
 
   .layout-text-left-image-right .speech.up {
-    position: relative;
     top: 13px;
     left: -40px;
-    text-align: center;
+  }
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 1281px) {
+  /* Additional CSS for larger screens */
+  .card {
+    height: 425px; /* Adjust height as necessary */
   }
 
-
-  .speech {
-    font-size: 12px; /* Reduced font size */
-    color: #fff;
-    background: #464242;
-    padding: 10px; /* Reduced padding */
-    border-radius: 20px 20px 20px 20px;
-    max-width: 400px;
+  .layout-text-bottom-image-top img {
     position: relative;
+    bottom: 140px;
+    left: 410px;
   }
 
-  .speech::after {
-    display: block;
-    width: 0;
-    content: "";
-    border: 12px solid transparent; /* Adjusted border size */
-    position: absolute;
+  .layout-text-bottom-image-top .speech.up {
+    top: 100px;
+    left: 245px;
   }
 
-  .speech.up::after {
-    top: -12px;
-    left: calc(50% - 12px);
+  .layout-text-bottom-image-top .speech3.up3 {
+    top: 10px;
+    left: -125px;
   }
 
-  .speech.up::after {
-    border-bottom-color: #000000;
-    border-top: 0;
+  .layout-text-bottom-image-top h2{
+    position: relative;
+    left: 190px;
+    bottom: 70px;
   }
+
+  .layout-text-bottom-image-top h5 {
+    top: 160px;
+    left: -15%;
+  }
+
+  .layout-text-bottom-image-top h4 {
+    top: 140px;
+    left: -37%;
+  }
+
+  /* Adjustments for 4K screens */
+ /* Media query for screens with a minimum width of 3840px */
+@media (min-width: 3840px) {
+
+  /* Container for the card grid */
+  #cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 40px; /* Gap between cards */
+    justify-content: center; /* Center the grid horizontally */
+    padding: 20px; /* Add some padding around the grid */
+  }
+
+  .card {
+    width: 100%; /* Full width of the grid column */
+    height: 810px; /* Adjusted height */
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden; /* Ensure content does not overflow */
+  }
+
+  /* Layout: Text on bottom, image on top */
+  .layout-text-bottom-image-top img {
+    width: 400px; /* Adjusted image size */
+    height: 400px;
+    margin-bottom: 20px; /* Space between image and text */
+  }
+
+  .layout-text-bottom-image-top .speech.up {
+    font-size: 56px; /* Larger font size for readability */
+    margin: 20px 0; /* Adjust spacing */
+  }
+
+  .layout-text-bottom-image-top .speech3.up3 {
+    font-size: 48px; /* Larger font size */
+    margin: 20px 0; /* Adjust spacing */
+  }
+
+  .layout-text-bottom-image-top h5 {
+    font-size: 72px; /* Larger font size */
+    margin: 20px 0; /* Adjust spacing */
+  }
+
+  .layout-text-bottom-image-top h4 {
+    font-size: 64px; /* Larger font size */
+    margin: 20px 0; /* Adjust spacing */
+  }
+
+  /* Layout: Text on left side, image on right side */
+  .layout-text-left-image-right img,
+  .layout-text-right-image-left img {
+    width: 400px; /* Larger image size */
+    height: 400px;
+  }
+
+  .layout-text-left-image-right .speech.up,
+  .layout-text-right-image-left .speech.up {
+    font-size: 56px; /* Larger font size */
+  }
+
+  .layout-text-left-image-right h5,
+  .layout-text-right-image-left h5 {
+    font-size: 72px; /* Larger font size */
+    padding: 40px;
+  }
+
+  .layout-text-left-image-right h4,
+  .layout-text-right-image-left h4 {
+    font-size: 64px; /* Larger font size */
+    padding: 40px;
+  }
+
+  .layout-text-left-image-right p,
+  .layout-text-right-image-left p {
+    font-size: 56px; /* Larger font size */
+  }
+
+  /* Adjustments for spacing */
+  .card-container-horizontal {
+    padding: 40px; /* Increased padding */
+  }
+
+}
+
+  /* Adjustments for 8K screens */
+
+  @media (min-width: 7601px) {
+    /* Additional CSS for larger screens */
+    .card {
+        height: 925px; /* Adjust height as necessary */
+        border-radius: 46px;
+    }
+
+    .nav-arrow {
+        position: absolute;
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%);
+        background-color: #757575;
+        color: #fff;
+        border: none;
+        padding: 7px;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        font-size: 100px; /* Corrected typo: changed '100x' to '100px' */
+    }
+
+    .nav-arrow:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .left-arrow {
+        left: 1700px;
+    }
+
+    .right-arrow {
+        right: 1700px;
+    }
+
+    .layout-text-bottom-image-top img {
+        height: 290px;
+        width: 290px;
+        position: relative;
+        bottom: 50%;
+        left: 45%;
+    }
+
+    .layout-text-bottom-image-top .speech.up {
+        font-size: 50px;
+        top: 100px;
+        left: 245px;
+    }
+
+    .layout-text-bottom-image-top .speech3.up3 {
+        top: 10px;
+        left: -125px;
+    }
+
+    .layout-text-bottom-image-top h2 {
+        font-size: 80px;
+        position: relative;
+        left: 800px;
+        bottom: 300px;
+        text-align: center;
+    }
+
+    .layout-text-bottom-image-top h5 {
+        top: 360px;
+        left: -40%;
+        font-size: 60px;
+        width: 600px;
+        min-height: 100px;
+    }
+
+    .layout-text-bottom-image-top h4 {
+        width: 500px;
+        height: 100px;
+        padding-top: 30px;
+        top: 140px;
+        left: -37%;
+    }
+}
 }

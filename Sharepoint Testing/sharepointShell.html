@@ -6,20 +6,15 @@
     <title>Sharepoint Testing</title>
     <style>
 
-    @media only screen and (max-width: 1280px) {
-        .iframe-responsive{
-            width: 1280px;
-            height:720px ;
-            overflow: hidden;
-        }
+@media only screen and (min-width: 1920px) {
+    .iframe-responsive {
+        width: 100%; /* Adjust width to fit the screen */
+        height: 1080px; /* Fixed height, but could be adjusted based on your needs */
+        max-width: 1920px; /* Ensures it doesn't exceed 1920px width */
+        overflow: hidden; /* Hides overflow if necessary */
     }
-    @media only screen and (min-width: 1920px) {
-        .iframe-responsive{
-            width: 1920px;
-            height:1080px ;
-            overflow: hidden;
-        }
-    }
+}
+
     </style>
 </head>
 

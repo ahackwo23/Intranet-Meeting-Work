@@ -1,12 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cardContainer = document.getElementById('cards');
   let currentIndex = 0;
-  const cardsPerPage = 4;
+  let cardsPerPage = getCardsPerPage();
+  let cardCount = 0;
+
+  function getCardsPerPage() {
+    if (window.innerWidth >= 7680) {
+      return 4; // 8K screens
+    } else if (window.innerWidth >= 3840) {
+      return 4; // 4K screens
+    } else if (window.innerWidth >= 1280) {
+      return 4; // Larger screens
+    } else if (window.innerWidth >= 768) {
+      return ; // Medium screens
+    } else {
+      return 2; // Smaller screens
+    }
+  }
 
   function loadCards(data) {
     data.cards.forEach((item) => {
       const card = document.createElement('div');
-      card.classList.add('card', 'layout-text-left-image-right', 'off-screen',); // Add necessary classes
+      card.classList.add('card', 'off-screen'); // Add necessary classes
 
       // Add layout class logic
       switch (item.templateDetails.layout.toLowerCase()) {
@@ -46,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cardText.appendChild(cardAction);
 
       const cardOrigin = document.createElement('p');
-      cardOrigin.innerHTML = `<div class='speech3 up3'> ${item.employee} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${item.timestamp}</div>`;
+      cardOrigin.innerHTML = `<div class='speech3 up3'> ${item.employee} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${item.timestamp}</div>`;
       cardText.appendChild(cardOrigin);
 
       const cardTYPE = document.createElement('h4');
@@ -72,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cardText.appendChild(cardDescription);
 
       const cardCategory = document.createElement('h5');
-      cardCategory.textContent = item.catergory;
+      cardCategory.textContent = item.category; // Fixed typo from 'catergory' to 'category'
       cardText.appendChild(cardCategory);
 
       card.appendChild(cardText);
@@ -126,6 +141,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize visibility
   updateCardVisibility();
+
+  // Handle window resize event
+  window.addEventListener('resize', () => {
+    const newCardsPerPage = getCardsPerPage();
+    if (newCardsPerPage !== cardsPerPage) {
+      cardsPerPage = newCardsPerPage;
+      updateCardCount();
+      updateCardVisibility();
+    }
+  });
 });
-
-
