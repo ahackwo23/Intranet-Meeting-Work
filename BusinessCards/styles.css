@@ -342,6 +342,30 @@ body {
     left: -37%;
   }
 
+  .layout-text-left-image-right h2 {
+    position: relative;
+    bottom: 60px;
+    left: 100px;
+  }
+
+  .layout-text-left-image-right .speech3.up3{
+    position: relative;
+    top: 40px;
+    right: 240px;
+  }
+
+  .layout-text-right-image-left h2 {
+    position: relative;
+    bottom: 60px;
+    left: 100px;
+  }
+
+  .layout-text-right-image-left .speech3.up3{
+    position: relative;
+    top: 40px;
+    right: 240px;
+  }
+
   /* Adjustments for 4K screens */
  /* Media query for screens with a minimum width of 3840px */
 @media (min-width: 3840px) {
@@ -438,6 +462,22 @@ body {
         border-radius: 46px;
     }
 
+    .speech.up::after {
+      top: 50%;
+      left: calc(-1% - 12px);
+      border-bottom-color: #000;
+      border-top: 0;
+    }
+    
+     .speech::after {
+      display: block;
+      width: 0;
+      content: "";
+      border: 12px solid transparent;
+      position: absolute;
+      transform: rotate(270deg); /* Default rotation */
+    }
+  
     .nav-arrow {
         position: absolute;
         top: 50%; /* Center vertically */
@@ -468,43 +508,50 @@ body {
         height: 290px;
         width: 290px;
         position: relative;
-        bottom: 50%;
+        bottom: 25%;
         left: 45%;
     }
 
     .layout-text-bottom-image-top .speech.up {
         font-size: 50px;
         top: 100px;
-        left: 245px;
+        left: 50%;
     }
 
     .layout-text-bottom-image-top .speech3.up3 {
-        top: 10px;
-        left: -125px;
+        top: -40%;
+        left: 50%;
     }
 
     .layout-text-bottom-image-top h2 {
         font-size: 80px;
         position: relative;
-        left: 800px;
+        left: 36%;
         bottom: 300px;
         text-align: center;
     }
 
     .layout-text-bottom-image-top h5 {
-        top: 360px;
+        top: 180%;
         left: -40%;
-        font-size: 60px;
-        width: 600px;
-        min-height: 100px;
+        font-size: 40px;
+        width: 700px;
+        height: 80px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
     }
 
     .layout-text-bottom-image-top h4 {
         width: 500px;
-        height: 100px;
-        padding-top: 30px;
-        top: 140px;
-        left: -37%;
+        font-size: 40px;
+        height: 60px;
+        top: 140%;
+        left: -7%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
     }
 }
 }
