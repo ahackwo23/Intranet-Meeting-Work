@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let cardCount = 0;
 
   function getCardsPerPage() {
-    if (window.innerWidth >= 7680) {
+    if (window.innerWidth >= 7601) {
       return 4; // 8K screens
     } else if (window.innerWidth >= 3840) {
       return 4; // 4K screens

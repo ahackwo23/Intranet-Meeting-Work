@@ -31,19 +31,18 @@
             }
       },
       {
-        "cardtemplate": "text on right, image on left",
-        "cardtype": "Recognition",
-        "employee": "Amelia Earhart",
-        "text": "You were speedy today on completing all the orders that were flying in!",
-        "from": "Senior Vice President",
-        "action": "Recognizes",
-        "timestamp": "3:13am | Jul 5",
-        "category":"★ TEAM",
-        "imageUrl": 
-  "https://static.vecteezy.com/system/resources/previews/011/604/451/original/colorful-thank-you-in-cartoon-style-funny-boxes-full-of-gratitude-cute-funny-faces-cool-lettering-greeting-card-for-banner-card-web-illustration-free-vector.jpg",
-        "templateDetails": {
+          "cardtemplate": "text on right, image on left",
+          "cardtype": "Milestone",
+          "employee": "Jimmy Allen",
+          "text": "Congratulations on your 10 year anniversary. You hit it out of the park every day!",
+          "from": "CEO",
+          "action": "Recognizes",
+          "timestamp": "7:13am | Jul 5",
+          "category":"★ STRIVE | INTEGRITY | VALUE",
+          "imageUrl": "https://static.vecteezy.com/system/resources/previews/011/604/451/original/colorful-thank-you-in-cartoon-style-funny-boxes-full-of-gratitude-cute-funny-faces-cool-lettering-greeting-card-for-banner-card-web-illustration-free-vector.jpg",
+          "templateDetails": {
             "layout": "text on right side, image on left side"
-        }
+          }
       },
       { 
         "cardtemplate": "text on left, image on right",
@@ -62,41 +61,43 @@
       },
       {
         "cardtemplate": "text on bottom, image on top",
-        "cardtype": "Happy Birthday",
-        "employee": "Jimmy Fallon",
-        "text": "Happy 40th Birthday, Jimmy!",
-        "from": "Human Resources",
+        "cardtype": "Milestone",
+        "employee": "Tim Allen",
+        "text": "Thank you for all you do!",
+        "from": "Manager",
         "action": "Recognizes",
-        "timestamp": "7:13am | Jul 5",
-        "category":"★ INTEGRITY",
-        "imageUrl": "https://t3.ftcdn.net/jpg/00/02/72/14/360_F_2721430_BGuw6cGZjOBUn56G4at2hrWK79nSGY.jpg",
+        "timestamp": "3:13am | Jul 3",
+        "category":"★ VALUE",
+        "imageUrl": 
+  "https://static.vecteezy.com/system/resources/previews/000/417/713/original/text-thank-you-on-green-background-calligraphy-lettering-vector-illustration-eps10.jpg",
         "templateDetails": {
-          "layout": "text on bottom, image on top"
-        }
+                    "layout": "text on bottom, image on top"
+                }
       },
       {
-        "cardtemplate": "text on bottom, image on top",
-        "cardtype": "Recognition",
-        "employee": "Thomas Fallon",
-        "text": "Thank you for all you do!",
-        "from": "Human Resources",
+       "cardtemplate": "text on bottom, image on top",
+        "cardtype": "Happy Birthday",
+        "employee": "Brandon Rogers",
+        "text": "Happy Birthday!",
+        "from": "Manager",
         "action": "Recognizes",
-        "timestamp": "7:13am | Jul 5",
-        "category":"★ INTEGRITY | STRIVE | EMPOWERMENT ",
-        "imageUrl": "https://t3.ftcdn.net/jpg/00/02/72/14/360_F_2721430_BGuw6cGZjOBUn56G4at2hrWK79nSGY.jpg",
+        "timestamp": "3:13am | Jul 3",
+        "category":"★ VALUE",
+        "imageUrl": 
+  "https://static.vecteezy.com/system/resources/previews/000/417/713/original/text-thank-you-on-green-background-calligraphy-lettering-vector-illustration-eps10.jpg",
         "templateDetails": {
-          "layout": "text on bottom, image on top"
-        }
+                    "layout": "text on bottom, image on top"
+                }
       },
       {
         "cardtemplate": "text on left, image on right",
         "cardtype": "Milestone",
         "employee": "Tim Allen",
         "text": "Congratulations on your 10 year anniversary. You hit it out of the park every day!",
-        "from": "CEO",
+        "from": "Human Resources",
         "action": "Recognizes",
         "timestamp": "7:13am | Jul 5",
-        "category":"★ STRIVE | INTEGRITY | VALUE",
+        "category":"★ STRIVE | INTEGRITY",
         "imageUrl": "https://t3.ftcdn.net/jpg/00/02/72/14/360_F_2721430_BGuw6cGZjOBUn56G4at2hrWK79nSGY.jpg",
         "templateDetails": {
           "layout": "text on left side, image on right side"
@@ -106,11 +107,11 @@
         "cardtemplate": "text on left, image on right",
         "cardtype": "Milestone",
         "employee": "Tim Allen",
-        "text": "Congratulations on your 10 year anniversary. You hit it out of the park every day!",
-        "from": "CEO",
+        "text": "Congratulations on your 20 year anniversary. You hit it out of the park every day!",
+        "from": "Human Resources",
         "action": "Recognizes",
-        "timestamp": "7:13am | Jul 5",
-        "category":"★ STRIVE | INTEGRITY | VALUE",
+        "timestamp": "9:13am | Jul 5",
+        "category":"★ STRIVE | VALUE",
         "imageUrl": "https://t3.ftcdn.net/jpg/00/02/72/14/360_F_2721430_BGuw6cGZjOBUn56G4at2hrWK79nSGY.jpg",
         "templateDetails": {
           "layout": "text on left side, image on right side"
