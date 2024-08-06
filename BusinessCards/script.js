@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0;
   let cardsPerPage = getCardsPerPage();
   let cardCount = 0;
+  const scrollInterval = 15000;
+  let autoScroll;
 
   function getCardsPerPage() {
     if (window.innerWidth >= 7601) {
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (window.innerWidth >= 1280) {
       return 4; // Larger screens
     } else if (window.innerWidth >= 768) {
-      return ; // Medium screens
+      return 2; // Medium screens
     } else {
       return 2; // Smaller screens
     }
@@ -96,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCardCount();
     updateCardVisibility();
+    startAutoScroll(); // Start the auto-scroll after loading cards
   }
 
   function updateCardCount() {
@@ -120,6 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function goToPage(pageIndex) {
     currentIndex = pageIndex;
     updateCardVisibility();
+  }
+
+  function startAutoScroll() {
+    clearInterval(autoScroll); // Clear any existing interval
+    autoScroll = setInterval(() => {
+      currentIndex = (currentIndex + 1) % Math.ceil(cardCount / cardsPerPage);
+      updateCardVisibility();
+    }, scrollInterval);
   }
 
   // Handle navigation arrows
@@ -151,4 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCardVisibility();
     }
   });
+
+  // Start auto-scroll on page load
+  startAutoScroll();
 });
+

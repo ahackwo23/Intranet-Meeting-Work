@@ -10,6 +10,7 @@ body {
   overflow: visible; /* Prevent scrolling */
 }
 
+
 /* Horizontal Container */
 .card-container-horizontal {
   display: flex;
